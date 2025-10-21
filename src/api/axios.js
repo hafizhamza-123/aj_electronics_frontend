@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create Axios instance
 const API = axios.create({
-  baseURL: "http://localhost:8001", 
+  baseURL: "https://aj-elec-backend.vercel.app", 
   headers: {
     "Content-Type": "application/json",
   },
@@ -33,7 +33,7 @@ API.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem("refreshToken");
         if (refreshToken) {
-          const res = await axios.post("http://localhost:8001/auth/refresh", {
+          const res = await axios.post("https://aj-elec-backend.vercel.app/auth/refresh", {
             refreshToken,
           });
 
