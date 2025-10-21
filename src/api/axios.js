@@ -1,8 +1,10 @@
 import axios from "axios";
 
-// Create Axios instance
+import axios from "axios";
+
+// Base URL from environment variable
 const API = axios.create({
-  baseURL: "https://aj-elec-backend.vercel.app", 
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -33,9 +35,10 @@ API.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem("refreshToken");
         if (refreshToken) {
-          const res = await axios.post("https://aj-elec-backend.vercel.app/auth/refresh", {
+          const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/refresh`, {
             refreshToken,
           });
+
 
           const newToken = res.data.token;
           localStorage.setItem("token", newToken);
