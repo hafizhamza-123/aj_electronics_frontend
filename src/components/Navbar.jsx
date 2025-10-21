@@ -38,7 +38,7 @@ export default function Navbar() {
       }
       try {
         const res = await fetch(
-          `http://localhost:8001/products/search?q=${encodeURIComponent(
+          `${import.meta.env.VITE_API_BASE_URL}/products/search?q=${encodeURIComponent(
             searchQuery
           )}`
         );
