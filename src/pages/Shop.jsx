@@ -23,7 +23,7 @@ export default function Shop() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:8001/products");
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         setProducts(res.data);
       } catch (err) {
         console.error("Error fetching products:", err);

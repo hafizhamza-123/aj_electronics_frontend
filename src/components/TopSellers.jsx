@@ -9,7 +9,7 @@ export default function TopSellers() {
   useEffect(() => {
     const fetchTopSellers = async () => {
       try {
-        const res = await fetch("http://localhost:8001/products/top");
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/products/top`);
         const data = await res.json();
 
         if (res.ok) {

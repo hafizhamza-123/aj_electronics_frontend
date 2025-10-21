@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 // Base URL from environment variable
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -7,6 +8,7 @@ const API = axios.create({
     "Content-Type": "application/json",
   },
 });
+
 
 //  Request Interceptor (attach token automatically)
 API.interceptors.request.use(
