@@ -74,9 +74,9 @@ export default function Features() {
           ))}
         </Swiper>
 
-        {/*  Centered orange arrows */}
-        <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px] !absolute !top-1/2 !left-2 -translate-y-1/2" />
-        <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px] !absolute !top-1/2 !right-2 -translate-y-1/2" />
+        {/* Centered orange arrows */}
+        <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
+        <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
       </div>
     </section>
   );

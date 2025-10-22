@@ -7,3 +7,25 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Force swiper arrows to be vertically centered */
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Adjust arrow position slightly inward */
+.swiper-button-prev {
+  left: 8px !important;
+}
+
+.swiper-button-next {
+  right: 8px !important;
+}
+
+/* Make arrows smaller and orange */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #f97316 !important; /* Tailwind orange-500 */
+  font-size: 14px !important;
+}
