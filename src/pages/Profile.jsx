@@ -34,11 +34,12 @@ export default function Profile() {
     fetchProfileAndOrders();
   }, [navigate]);
 
+  // ✅ Updated logout to use navigate()
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("user");
-    window.location.href = "/login";
+    navigate("/login", { replace: true });
   };
 
   if (loading)
@@ -152,10 +153,7 @@ export default function Profile() {
 
                   <div className="divide-y divide-gray-200 text-sm text-gray-700">
                     {order.items.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex justify-between py-2"
-                      >
+                      <div key={index} className="flex justify-between py-2">
                         <span>{item.name}</span>
                         <span>x{item.quantity}</span>
                       </div>
