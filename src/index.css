@@ -1,50 +1,25 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
-html,
-body {
+html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Ensure swiper container is positioned correctly */
-.swiper,
-.feature-swiper {
-  position: relative !important;
+/* Customize slick arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: #f97316 !important; /* Tailwind orange-500 */
+  font-size: 20px !important;
 }
 
-/* Ensure Swiper navigation arrows are visible, vertically centered, and orange */
-.swiper-button-prev,
-.swiper-button-next {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: #f97316 !important; /* Tailwind orange-500 */
-  width: 30px;
-  height: 30px;
+.slick-prev {
+  left: 10px !important;
   z-index: 10;
 }
 
-/* Remove default blue SVG background or icon */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  color: #f97316 !important;
-  font-size: 20px !important;
-  background: none !important;
-  border: none !important;
-  filter: none !important;
-}
-
-/* Adjust horizontal placement */
-.swiper-button-prev {
-  left: 10px !important;
-}
-
-.swiper-button-next {
+.slick-next {
   right: 10px !important;
-}
-
-/* Optional: hover effect for clarity */
-.swiper-button-prev:hover::after,
-.swiper-button-next:hover::after {
-  color: #fb923c !important; /* Tailwind orange-400 */
+  z-index: 10;
 }
