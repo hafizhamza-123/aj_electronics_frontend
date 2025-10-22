@@ -74,8 +74,8 @@ export default function Categories() {
 
   return (
     <section
-      className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-16"
-      style={{ overflow: "hidden" }} // ✅ Prevents overlap
+      className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-06 mb-16"
+      style={{ overflow: "hidden" }} 
     >
       <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center sm:text-left">
         Trending Categories
