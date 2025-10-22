@@ -50,7 +50,7 @@ export default function Features() {
       </div>
 
       {/* Mobile View - Swiper Slider */}
-      <div className="md:hidden">
+      <div className="md:hidden relative">
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -59,7 +59,7 @@ export default function Features() {
           }}
           spaceBetween={10}
           slidesPerView={1}
-          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow relative"
+          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow"
         >
           {features.map((f, i) => (
             <SwiperSlide key={i}>
@@ -72,11 +72,11 @@ export default function Features() {
               </div>
             </SwiperSlide>
           ))}
-
-          {/* Smaller orange arrows */}
-          <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
-          <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
         </Swiper>
+
+        {/*  Centered smaller orange arrows */}
+        <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px] !top-1/2 !-translate-y-1/2 !left-2" />
+        <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px] !top-1/2 !-translate-y-1/2 !right-2" />
       </div>
     </section>
   );
