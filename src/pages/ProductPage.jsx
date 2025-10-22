@@ -252,13 +252,13 @@ export default function ProductPage() {
             You May Also Like
           </h2>
 
-          {/* Desktop Scrollable Row */}
+          {/* ✅ Desktop Scrollable Row (unchanged) */}
           <div className="hidden md:flex gap-6 overflow-x-auto px-8 scrollbar-hide pb-4">
             {related.map((item) => (
               <div
                 key={item._id}
                 className="flex-shrink-0 w-[240px] hover:scale-105 transition-all duration-300"
-                style={{ minHeight: "320px" }} // ✅ reduced height
+                style={{ minHeight: "320px" }}
               >
                 <ProductCard
                   product={item}
@@ -268,16 +268,17 @@ export default function ProductPage() {
             ))}
           </div>
 
-          {/* Mobile Carousel */}
+          {/* ✅ Mobile Carousel (improved) */}
           <div className="relative md:hidden flex items-center justify-center px-4">
+            {/* 🔹 Left Arrow */}
             {related.length > 2 && (
               <button
                 onClick={() =>
                   setCurrentIndex((prev) => (prev - 2 + related.length) % related.length)
                 }
-                className="absolute left-2 z-10 bg-white border border-gray-300 text-black 
-              rounded-full p-3 shadow-sm hover:bg-black hover:text-white 
-              transition-all duration-300 active:scale-95"
+                className="absolute left-1 z-10 bg-white border border-gray-300 text-black
+          rounded-full p-2 shadow-sm hover:bg-black hover:text-white 
+          transition-all duration-300 active:scale-95"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -285,20 +286,23 @@ export default function ProductPage() {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
             )}
 
-            <div className="flex overflow-hidden w-full justify-center items-stretch">
+            <div
+              className={`flex overflow-hidden w-full ${related.length === 1 ? "justify-start pl-3" : "justify-center"
+                } items-stretch`}
+            >
               {related.slice(currentIndex, currentIndex + 2).map((item) => (
                 <div
                   key={item._id}
-                  className="flex-shrink-0 w-1/2 p-3 hover:scale-105 transition-all duration-300"
+                  className="flex-shrink-0 w-1/2 p-2 hover:scale-105 transition-all duration-300"
                 >
-                  <div style={{ minHeight: "320px" }}>
+                  <div className="h-full">
                     <ProductCard
                       product={item}
                       onClick={() => navigate(`/product/${item._id}`)}
@@ -308,12 +312,13 @@ export default function ProductPage() {
               ))}
             </div>
 
+            {/* 🔹 Right Arrow */}
             {related.length > 2 && (
               <button
                 onClick={() => setCurrentIndex((prev) => (prev + 2) % related.length)}
-                className="absolute right-2 z-10 bg-white border border-gray-300 text-black 
-              rounded-full p-3 shadow-sm hover:bg-black hover:text-white 
-              transition-all duration-300 active:scale-95"
+                className="absolute right-1 z-10 bg-white border border-gray-300 text-black 
+          rounded-full p-2 shadow-sm hover:bg-black hover:text-white 
+          transition-all duration-300 active:scale-95"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -321,7 +326,7 @@ export default function ProductPage() {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
@@ -330,9 +335,6 @@ export default function ProductPage() {
           </div>
         </div>
       )}
-
-
-
     </section>
   );
 }
