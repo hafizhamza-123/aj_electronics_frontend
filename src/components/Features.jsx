@@ -59,7 +59,7 @@ export default function Features() {
           }}
           spaceBetween={10}
           slidesPerView={1}
-          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow feature-swiper"
+          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow relative flex items-center feature-swiper"
         >
           {features.map((f, i) => (
             <SwiperSlide key={i}>
@@ -74,7 +74,7 @@ export default function Features() {
           ))}
         </Swiper>
 
-        {/* Navigation arrows */}
+        {/* Navigation Arrows */}
         <div className="swiper-button-prev" />
         <div className="swiper-button-next" />
       </div>

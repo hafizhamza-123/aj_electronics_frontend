@@ -1,15 +1,21 @@
 @import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Ensure Swiper navigation arrows are visible, centered, and orange */
+/* Ensure swiper container is positioned correctly */
+.swiper,
+.feature-swiper {
+  position: relative !important;
+}
+
+/* Ensure Swiper navigation arrows are visible, vertically centered, and orange */
 .swiper-button-prev,
 .swiper-button-next {
+  position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   color: #f97316 !important; /* Tailwind orange-500 */
@@ -37,8 +43,8 @@ html, body {
   right: 10px !important;
 }
 
-/* Optional: increase arrow contrast on hover */
+/* Optional: hover effect for clarity */
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  color: #fb923c !important; /* orange-400 */
+  color: #fb923c !important; /* Tailwind orange-400 */
 }
