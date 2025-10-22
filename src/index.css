@@ -8,3 +8,20 @@ html, body {
 }
 
 
+/* Prevent slick from cropping hover effects */
+.slick-list {
+  overflow: visible !important;
+}
+
+.slick-slide > div {
+  margin: 0 8px;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.slick-slide {
+  transition: transform 0.3s ease-in-out;
+}

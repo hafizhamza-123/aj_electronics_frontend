@@ -21,10 +21,11 @@ export default function Categories() {
     navigate(`/category/${encodeURIComponent(name)}`);
   };
 
+  // ✅ Custom arrow components
   const NextArrow = ({ onClick }) => (
     <div
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full cursor-pointer 
-      hover:bg-orange-500 hover:text-white transition"
+      className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full cursor-pointer
+      hover:bg-orange-500 hover:text-white transition duration-300 ease-out"
       onClick={onClick}
     >
       <FiChevronRight className="text-2xl" />
@@ -33,8 +34,8 @@ export default function Categories() {
 
   const PrevArrow = ({ onClick }) => (
     <div
-      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full cursor-pointer 
-      hover:bg-orange-500 hover:text-white transition"
+      className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full cursor-pointer
+      hover:bg-orange-500 hover:text-white transition duration-300 ease-out"
       onClick={onClick}
     >
       <FiChevronLeft className="text-2xl" />
@@ -53,35 +54,23 @@ export default function Categories() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 1280,
-        settings: { slidesToShow: 4, slidesToScroll: 2 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3, slidesToScroll: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 640,
-        settings: "unslick",
-      },
+      { breakpoint: 1280, settings: { slidesToShow: 4, slidesToScroll: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+      { breakpoint: 640, settings: "unslick" },
     ],
   };
 
   return (
     <section
-      className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-06 mb-16"
-      style={{ overflow: "hidden" }} 
+      className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16"
+      style={{ overflow: "visible" }} // ✅ prevent cropping
     >
       <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center sm:text-left">
         Trending Categories
       </h3>
 
-      {/* 🔹 Mobile Grid Layout */}
+      {/* 🔹 Mobile Grid */}
       <div className="grid grid-cols-2 gap-4 sm:hidden">
         {categories.map((c) => (
           <div
@@ -100,8 +89,8 @@ export default function Categories() {
         ))}
       </div>
 
-      {/* 🔹 Desktop & Tablet Slider */}
-      <div className="hidden sm:block relative pb-6"> {/* ✅ Added padding-bottom */}
+      {/* 🔹 Desktop Slider */}
+      <div className="hidden sm:block relative pb-10 overflow-visible">
         <Slider {...settings}>
           {categories.map((c) => (
             <div key={c.name} className="px-3">
