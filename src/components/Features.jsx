@@ -53,10 +53,13 @@ export default function Features() {
       <div className="md:hidden">
         <Swiper
           modules={[Navigation]}
-          navigation
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
           spaceBetween={10}
           slidesPerView={1}
-          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow"
+          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow relative"
         >
           {features.map((f, i) => (
             <SwiperSlide key={i}>
@@ -69,6 +72,10 @@ export default function Features() {
               </div>
             </SwiperSlide>
           ))}
+
+          {/* Smaller orange arrows */}
+          <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
+          <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
         </Swiper>
       </div>
     </section>
