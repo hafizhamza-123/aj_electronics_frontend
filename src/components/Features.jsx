@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { MapPin, Package, ThumbsUp, Phone, Heart } from "lucide-react";
 
@@ -34,7 +35,7 @@ const features = [
 export default function Features() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-      {/* Desktop / Tablet View */}
+      {/* ✅ Desktop / Tablet View */}
       <div className="hidden md:flex justify-between items-center gap-6 bg-[#0B0320] text-white rounded-full px-8 py-6 shadow">
         {features.map((f, i) => (
           <div key={i} className="flex items-center gap-3">
@@ -47,11 +48,17 @@ export default function Features() {
         ))}
       </div>
 
-      {/* Mobile View - Swiper Slider (swipe only) */}
+      {/* ✅ Mobile View with autoplay */}
       <div className="md:hidden">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          loop={true}
           className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow"
         >
           {features.map((f, i) => (
