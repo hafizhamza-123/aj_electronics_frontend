@@ -7,25 +7,27 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Force swiper arrows to be vertically centered */
-.swiper-button-prev,
-.swiper-button-next {
+/* Center Swiper arrows vertically inside the mobile feature container */
+.feature-swiper .swiper-button-prev,
+.feature-swiper .swiper-button-next {
+  position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
+  z-index: 10 !important;
 }
 
-/* Adjust arrow position slightly inward */
-.swiper-button-prev {
-  left: 8px !important;
+/* Move arrows slightly inward */
+.feature-swiper .swiper-button-prev {
+  left: 6px !important;
 }
 
-.swiper-button-next {
-  right: 8px !important;
+.feature-swiper .swiper-button-next {
+  right: 6px !important;
 }
 
-/* Make arrows smaller and orange */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  color: #f97316 !important; /* Tailwind orange-500 */
+/* Customize arrow look */
+.feature-swiper .swiper-button-prev::after,
+.feature-swiper .swiper-button-next::after {
+  color: #f97316 !important; /* orange-500 */
   font-size: 14px !important;
 }

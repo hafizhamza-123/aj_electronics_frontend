@@ -59,7 +59,7 @@ export default function Features() {
           }}
           spaceBetween={10}
           slidesPerView={1}
-          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow"
+          className="bg-[#0B0320] text-white rounded-full px-6 py-5 shadow feature-swiper"
         >
           {features.map((f, i) => (
             <SwiperSlide key={i}>
@@ -74,9 +74,9 @@ export default function Features() {
           ))}
         </Swiper>
 
-        {/* Centered orange arrows */}
-        <div className="swiper-button-prev !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
-        <div className="swiper-button-next !text-orange-500 !w-6 !h-6 after:!text-[14px]" />
+        {/* Navigation arrows */}
+        <div className="swiper-button-prev" />
+        <div className="swiper-button-next" />
       </div>
     </section>
   );
