@@ -1,9 +1,9 @@
 import React from "react";
 import {
   FaFacebookF,
-  FaTwitter,
+  FaMapSigns,
   FaInstagram,
-  FaLinkedinIn,
+  FaYoutube,
   FaCcVisa,
   FaCcMastercard,
   FaCcPaypal,
@@ -30,14 +30,14 @@ export default function Footer() {
             <a href="https://www.facebook.com/AlJadeedElectronics/" target="_blank" rel="noreferrer">
               <FaFacebookF className="h-5 w-5 hover:text-orange-500 transition" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <FaTwitter className="h-5 w-5 hover:text-orange-500 transition" />
+            <a href="https://youtube.com/@al-jadeedelectronics390?si=71yT95tuR1Jlf_Pg" target="_blank" rel="noreferrer">
+              <FaYoutube className="h-5 w-5 hover:text-orange-500 transition" />
             </a>
             <a href="https://instagram.com/aljadeedelectronics/" target="_blank" rel="noreferrer">
               <FaInstagram className="h-5 w-5 hover:text-orange-500 transition" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <FaLinkedinIn className="h-5 w-5 hover:text-orange-500 transition" />
+            <a href="https://maps.app.goo.gl/A7K39CMf77SHTKxP8" target="_blank" rel="noreferrer">
+              <FaMapSigns className="h-5 w-5 hover:text-orange-500 transition" />
             </a>
           </div>
         </div>
